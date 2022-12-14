@@ -1,9 +1,27 @@
-body {
-  background-color: #f8a2ce;
+:host {
+  display: flex;
+  min-height: 100%;
 }
-h1 {
-  color: blue;
+nav {
+  width: 68px;
+  background-color: #53ace4;
 }
-.description {
-  color: green;
+nav .icon {
+  width: 48px;
+  height: 48px;
+  margin: 10px;
+}
+section {
+  width: 100%;
+  background-color: #32435b;
+}
+section > header {
+  color: #ffffff;
+  padding: 10px;
+}
+section > header > h1 {
+  font-size: 2em;
+}
+section > header .description {
+  font-style: italic;
 }
