@@ -18,8 +18,28 @@ export class MediaItemFormComponent implements OnInit {
         ])
       ),
       category: new FormControl(),
-      year: new FormControl(),
+      year: new FormControl(''),
+      // year: new FormControl('', this.yearValidator), //Needs fixing for custom validators
     });
+  }
+
+  yearValidator(control: FormControl) {
+    if (control.value.trim().length === 0) {
+      return null;
+    }
+    const year = parseInt(control.value, 10);
+    const minYear = 1900;
+    const maxYear = 1900;
+    if (year >= minYear && year <= maxYear) {
+      return null;
+    } else {
+      return {
+        year: {
+          min: minYear,
+          max: maxYear,
+        },
+      };
+    }
   }
   onSubmit(mediaItem: any) {
     console.log(mediaItem);
