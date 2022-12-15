@@ -16,11 +16,17 @@ h2 {
 :host(.medium-movies) {
   border-color: #53ace4;
 }
+:host-context(.medium-movies) .label {
+  background-color: #53ace4;
+}
 :host(.medium-movies) > h2 {
   color: #53ace4;
 }
 :host(.medium-series) {
   border-color: #45bf94;
+}
+:host-context(.medium-series) .label {
+  background-color: #45bf94;
 }
 :host(.medium-series) > h2 {
   color: #45bf94;
