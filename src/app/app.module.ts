@@ -6,11 +6,10 @@ import { HttpClientModule, HttpXhrBackend } from '@angular/common/http';
 import { MediaItemListComponent } from './media-item-list.component';
 import { FavoriteDirective } from './favorite.directive';
 import { CategoryListPipe } from './category-list.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MediaItemFormComponent } from './media-item-form.component';
+import { NewItemModule } from './new-item/new-item.module';
 import { lookupListToken, lookupLists } from './providers';
 import { MockXHRBackend } from './mock-xhr-backend';
-import { AppRoutingModule } from './app-routing.module';
+import { routing } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,14 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     MediaItemListComponent,
     FavoriteDirective,
     CategoryListPipe,
-    MediaItemFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-  ],
+  imports: [BrowserModule, HttpClientModule, routing, NewItemModule],
   bootstrap: [AppComponent],
   providers: [
     { provide: lookupListToken, useValue: lookupLists },
